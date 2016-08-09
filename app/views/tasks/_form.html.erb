@@ -1,0 +1,22 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "30x10" %>
+  <%= f.label :importance %>
+  <%= f.range_field :importance, in: 0..10 %>
+  <%= f.hidden :done, false if :done == nil %>
+  <%= f.submit %>
+<% end %>
+
+<!-- <form action="/tasks" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="task[name]" id="name">
+  <label for="description">Description:</label>
+  <textarea name="task[description]" id="description" cols="30" rows="10"></textarea>
+  <label for="importance">Importance:</label>
+  <input type="range" name="task[importance]" value="5" max="10" min="0" step="1">
+  <input type="hidden" name="task[done]" value="false">
+  <input type="submit">
+</form>
+ -->
